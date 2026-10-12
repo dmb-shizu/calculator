@@ -1,0 +1,36 @@
+.container {
+    background-color: hsla(293, 100%, 25%, 0.747);
+    width: 520px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.display {
+    background-color: white;
+    height: 80px;
+    width: 100%;
+}
+
+.btns-container{
+    display: flex;
+    background-color: rgba(0, 255, 191, 0.534);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+
+}
+
+.btns-container div{
+    display: flex;
+    background-color: pink;
+    height: 80px;
+    width: 25%;
+    align-items: center;
+    justify-content: center;
+    margin: 3px;
+    border-radius: 5px;
+}
