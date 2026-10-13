@@ -46,10 +46,18 @@ console.log(operate("+", 10, 2));
 
 
 const btns = document.querySelectorAll(".btn");
+const display = document.querySelector(".display");
 
 btns.forEach((btn) => {
      btn.addEventListener("click", () => {
-        console.log(btn.textContent);
+       
+
+        if(!isNaN(btn.textContent)){
+            num1 += btn.textContent;
+            display.textContent = num1;
+
+        }
+
     });
         
 });
