@@ -43,3 +43,13 @@ function operate (operator, num1, num2) {
 }
 
 console.log(operate("+", 10, 2));
+
+
+const btns = document.querySelectorAll(".btn");
+
+btns.forEach((btn) => {
+     btn.addEventListener("click", () => {
+        console.log(btn.textContent);
+    });
+        
+});

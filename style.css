@@ -25,7 +25,7 @@
 
 }
 
-.btns-container button{
+.btn {
     display: flex;
     flex-wrap: wrap;
     background-color: lavender;
