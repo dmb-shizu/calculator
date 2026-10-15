@@ -42,22 +42,34 @@ function operate (operator, num1, num2) {
     }
 }
 
-console.log(operate("+", 10, 2));
 
 
 const btns = document.querySelectorAll(".btn");
 const display = document.querySelector(".display");
+const operators = ["+", "-", "*", "/"];
 
 btns.forEach((btn) => {
      btn.addEventListener("click", () => {
        
-
         if(!isNaN(btn.textContent)){
-            num1 += btn.textContent;
-            display.textContent = num1;
-
+            if (operator) {
+                num2 += btn.textContent;
+                display.textContent = num2;
+            }else {
+                num1 += btn.textContent;
+                display.textContent = num1;
+            }
+        } else if (operators.includes(btn.textContent)){
+            operator = btn.textContent;
+        } else if (btn.textContent === "=") {
+            display.textContent = operate(operator, Number(num1), Number(num2));
         }
+        
+        console.log(display.textContent);
+
 
     });
         
 });
+
+
