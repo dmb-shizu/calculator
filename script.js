@@ -65,6 +65,12 @@ btns.forEach((btn) => {
             if (num1 && num2 && operator) {
                 display.textContent = operate(operator, Number(num1), Number(num2));
             }
+        } else if (btn.textContent === "Clear") {
+            num1 = "";
+            num2 = "";
+            operator = "";
+
+            display.textContent = "";
         }
         
         console.log(display.textContent);
