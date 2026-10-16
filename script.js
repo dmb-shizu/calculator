@@ -62,7 +62,9 @@ btns.forEach((btn) => {
         } else if (operators.includes(btn.textContent)){
             operator = btn.textContent;
         } else if (btn.textContent === "=") {
-            display.textContent = operate(operator, Number(num1), Number(num2));
+            if (num1 && num2 && operator) {
+                display.textContent = operate(operator, Number(num1), Number(num2));
+            }
         }
         
         console.log(display.textContent);
