@@ -1,6 +1,7 @@
 let num1 = "";
 let num2 = "";
 let operator = "";
+let resultShown = false;
 
 const add = function(a, b) {
     let sum = a + b;
@@ -52,6 +53,12 @@ btns.forEach((btn) => {
      btn.addEventListener("click", () => {
        
         if(!isNaN(btn.textContent)){
+            if(resultShown){
+                num1 = "";
+                num2 = "";
+                operator = "";
+                resultShown = false;
+            }
             if (operator) {
                 num2 += btn.textContent;
                 display.textContent = num2;
@@ -64,13 +71,14 @@ btns.forEach((btn) => {
         } else if (btn.textContent === "=") {
             if (num1 && num2 && operator) {
                 display.textContent = operate(operator, Number(num1), Number(num2));
+                resultShown = true;
             }
         } else if (btn.textContent === "Clear") {
             num1 = "";
             num2 = "";
             operator = "";
-
             display.textContent = "";
+            resultShown = false;
         }
         
         console.log(display.textContent);
