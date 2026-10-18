@@ -44,7 +44,6 @@ function operate (operator, num1, num2) {
 }
 
 
-
 const btns = document.querySelectorAll(".btn");
 const display = document.querySelector(".display");
 const operators = ["+", "-", "*", "/"];
@@ -67,10 +66,21 @@ btns.forEach((btn) => {
                 display.textContent = num1;
             }
         } else if (operators.includes(btn.textContent)){
+            if (num1 && num2 && operator) {
+                display.textContent = operate(operator, Number(num1), Number(num2));
+                num1 = Number(display.textContent);
+                num2 = "";
+                
+            }
             operator = btn.textContent;
+            resultShown = false;
+
+            
         } else if (btn.textContent === "=") {
             if (num1 && num2 && operator) {
                 display.textContent = operate(operator, Number(num1), Number(num2));
+                num1 = Number(display.textContent);
+                num2 = "";
                 resultShown = true;
             }
         } else if (btn.textContent === "Clear") {
