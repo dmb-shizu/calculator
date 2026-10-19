@@ -23,8 +23,12 @@ const multiply = function(a, b) {
 
 const divide = function (a, b) {
     let quotient = a / b;
+    if (b === 0) {
+        return "Nice try";
+    } else {
+        return quotient;
+    }
 
-    return quotient;
 
 }
 
@@ -65,12 +69,21 @@ btns.forEach((btn) => {
                 num1 += btn.textContent;
                 display.textContent = num1;
             }
+
         } else if (operators.includes(btn.textContent)){
             if (num1 && num2 && operator) {
-                display.textContent = operate(operator, Number(num1), Number(num2));
-                num1 = Number(display.textContent);
-                num2 = "";
-                
+                const result = operate(operator, Number(num1), Number(num2));
+                if (typeof result === "string") {
+                    display.textContent = result;
+                    num1 = "";
+                    num2 = "";
+                    operator = "";
+                }else {
+                    display.textContent = result;
+                    num1 = display.textContent;
+                    num2 = "";
+                }
+              
             }
             operator = btn.textContent;
             resultShown = false;
@@ -78,11 +91,22 @@ btns.forEach((btn) => {
             
         } else if (btn.textContent === "=") {
             if (num1 && num2 && operator) {
-                display.textContent = operate(operator, Number(num1), Number(num2));
-                num1 = Number(display.textContent);
-                num2 = "";
+            const result = operate(operator, Number(num1), Number(num2));
+                if (typeof result === "string") {
+                    display.textContent = result;
+                    num1 = "";
+                    num2 = "";
+                    operator = "";
+                } else {
+                    display.textContent = result;
+                    num1 = result;
+                    num2 = "";
+                    
+                }
                 resultShown = true;
             }
+            
+
         } else if (btn.textContent === "Clear") {
             num1 = "";
             num2 = "";
