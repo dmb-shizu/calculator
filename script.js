@@ -78,6 +78,7 @@ btns.forEach((btn) => {
                     num1 = "";
                     num2 = "";
                     operator = "";
+                    return;
                 }else {
                     display.textContent = Math.round(result * 100)/100;
                     num1 = display.textContent;
