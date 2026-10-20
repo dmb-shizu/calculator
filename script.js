@@ -74,12 +74,12 @@ btns.forEach((btn) => {
             if (num1 && num2 && operator) {
                 const result = operate(operator, Number(num1), Number(num2));
                 if (typeof result === "string") {
-                    display.textContent = result;
+                    display.textContent = Math.round(result * 100)/100;
                     num1 = "";
                     num2 = "";
                     operator = "";
                 }else {
-                    display.textContent = result;
+                    display.textContent = Math.round(result * 100)/100;
                     num1 = display.textContent;
                     num2 = "";
                 }
@@ -93,12 +93,12 @@ btns.forEach((btn) => {
             if (num1 && num2 && operator) {
             const result = operate(operator, Number(num1), Number(num2));
                 if (typeof result === "string") {
-                    display.textContent = result;
+                    display.textContent = Math.round(result * 100)/100;
                     num1 = "";
                     num2 = "";
                     operator = "";
                 } else {
-                    display.textContent = result;
+                    display.textContent = Math.round(result * 100)/100;
                     num1 = result;
                     num2 = "";
                     
